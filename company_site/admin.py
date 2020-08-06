@@ -1,3 +1,9 @@
-from django.contrib import admin
+# Name:         Roger Silva Santos Aguiar
+# Function:     Admin settings
+# Initial date: August 6, 2020
+# Last update:  August 6, 2020
 
-# Register your models here.
+from django.contrib import admin
+from .models import Employee
+
+admin.site.register(Employee)
