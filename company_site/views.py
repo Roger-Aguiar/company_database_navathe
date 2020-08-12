@@ -7,9 +7,10 @@ from django.template import loader
 from django.http import HttpResponse, request
 from .models import Employee
 
-def index():
-    # employees = Employee.objects
-    employees = [Employee.fname, Employee.minit, Employee.lname, Employee.ssn, Employee.bdate, Employee.address, Employee.sex, Employee.salary, Employee.dno]
-    template = loader.get_template('company_site/index.html')
+def employees(request):
+    employees = Employee.objects.all()
+    # employees = [Employee.fname, Employee.minit, Employee.lname, Employee.bdate, Employee.address, Employee.sex, Employee.salary, Employee.dno]
+    template = loader.get_template('employees/employees.html')
     context = {'employees': employees, 'title': 'Employees'}
     return HttpResponse(template.render(context, request))
+    # return render(request, 'employees/employees.html', context)
