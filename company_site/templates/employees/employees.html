@@ -1,0 +1,54 @@
+<!--
+Name:         Roger Silva Santos Aguiar
+Function:     View to display all the employees from the database
+Initial date: August 11, 2020
+Last update:  August 11, 2020
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        table, th, td
+        {
+        border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Employees</h1>
+
+    <table>
+        <tr>
+            <td>First name</td>
+            <td>Minit name</td>
+            <td>Last name</td>
+            <td>Ssn</td>
+            <td>Birth date</td>
+            <td>Address</td>
+            <td>Sex</td>
+            <td>Salary</td>
+            <td>Dno</td>
+        </tr>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.fname }}</td>
+            <td>{{ employee.minit }}</td>
+            <td>{{ employee.lname }}</td>
+            <td>{{ employee.bdate }}</td>
+            <td>{{ employee.address }}</td>
+            <td>{{ employee.sex }}</td>
+            <td>{{ employee.ssn }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.dno }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+</body>
+</html>
